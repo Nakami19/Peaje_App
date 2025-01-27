@@ -1,4 +1,10 @@
-## [1.0.0+4] - 2025-1-26 - Natalia. R
+## [1.0.0+5] - 2025-1-27 - Natalia. R
+
+## Add
+
+- Tarjetas con informacion de vehiculos en dashboard
+
+## [1.0.0+4] - 2025-1-27 - Natalia. R
 
 ## Add
 
