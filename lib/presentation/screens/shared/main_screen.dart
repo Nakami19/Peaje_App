@@ -1,15 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:peaje_app/presentation/widgets/custom_navbar.dart';
+import 'package:provider/provider.dart';
 
-class MainScreen extends StatefulWidget {
-  const MainScreen({super.key});
+import '../../providers/navigation_provider.dart';
 
-  @override
-  State<MainScreen> createState() => _MainScreenState();
-}
+class MainScreen extends StatelessWidget {
+  const MainScreen({
+    super.key,
+    required this.selectedIndex,
+    required this.child,
+  });
 
-class _MainScreenState extends State<MainScreen> {
+  final int selectedIndex;
+  final Widget child;
+
+
   @override
   Widget build(BuildContext context) {
-    return Container();
+    final navProvider = context.watch<NavigationProvider>();
+    return Scaffold(
+      body: child,
+      bottomNavigationBar:navProvider.showNavBar? CustomNavbar(
+        selectedIndex: selectedIndex,
+        onDestinationSelected: (index) {
+          navProvider.updateIndex(index);
+        },
+      ) : null
+    );
   }
-}
+  }
+

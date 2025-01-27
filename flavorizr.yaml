@@ -1,0 +1,80 @@
+flavors:
+  developer:
+    app:
+      name: "Peaje"
+
+    android:
+      applicationId: "com.peaje.app"
+      resValues:
+        environmentTitle:
+          type: "string"
+          value: "DEVELOPER"
+    ios:
+      bundleId: "com.peaje.app"
+      variables:
+        environmentTitle:
+          value: "DEVELOPER"
+
+  qa:
+    app:
+      name: "Peaje"
+
+    android:
+      applicationId: "com.peaje.app"
+      resValues:
+        environmentTitle:
+          type: "string"
+          value: "QUALITY"
+    ios:
+      bundleId: "com.peaje.app"
+      variables:
+        environmentTitle:
+          value: "QUALITY"
+
+  sandbox:
+    app:
+      name: "Peaje"
+
+    android:
+      applicationId: "com.peaje.app"
+      resValues:
+        environmentTitle:
+          type: "string"
+          value: "SANDBOX"
+    ios:
+      bundleId: "com.peaje.app"
+      variables:
+        environmentTitle:
+          value: "SANDBOX"
+
+  preproduction:
+    app:
+      name: "Peaje"
+
+    android:
+      applicationId: "com.peaje.app"
+      resValues:
+        environmentTitle:
+          type: "string"
+          value: "PREPRODUCTION"
+    ios:
+      bundleId: "com.peaje.app"
+      variables:
+        environmentTitle:
+          value: "PREPRODUCTION"
+
+  production:
+    app:
+      name: "Peaje"
+
+    android:
+      applicationId: "com.peaje.app"
+      resValues:
+        environmentTitle:
+          type: "string"
+          value: "PRODUCTION"
+    ios:
+      bundleId: "com.peaje.app"
+      variables:
+        environmentTitle:
+          value: "PRODUCTION"

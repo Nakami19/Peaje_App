@@ -1,3 +1,13 @@
+## [1.0.0+4] - 2025-1-26 - Natalia. R
+
+## Add
+
+- Pantalla principal que contiene el navbar
+
+- Imagen de fondo en las vistas de inicio
+
+- Input de monto para indicar monto a recargar
+
 ## [1.0.0+3] - 2025-1-26 - Natalia. R
 
 ## Fix
