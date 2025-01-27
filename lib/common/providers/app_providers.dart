@@ -1,4 +1,6 @@
 
+import 'package:peaje_app/presentation/providers/session_provider.dart';
+
 import '/common/common_index.dart';
 import 'package:provider/single_child_widget.dart';
 import 'package:provider/provider.dart';
@@ -9,6 +11,7 @@ class AppProviders {
   static List<SingleChildWidget> providers = [
     ChangeNotifierProvider(create: (_) => GeneralProvider()),
     ChangeNotifierProvider(create: (_) => PaginationProvider()),
+    ChangeNotifierProvider(create: (_) => SessionProvider()),
   ];
 
   static List<GeneralProvider> getDisposableProviders(BuildContext context) {

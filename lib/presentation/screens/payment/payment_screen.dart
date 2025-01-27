@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:peaje_app/common/common_index.dart';
+import 'package:peaje_app/config/data_constants/data_constants.dart';
 import 'package:provider/provider.dart';
 
 class PaymentScreen extends StatefulWidget {
@@ -107,7 +108,9 @@ class _PaymentScreenState extends State<PaymentScreen> {
                               isPrimaryColor: false,
                               isOutline: false,
                               colorFilledButton: Color(0xFF4F4094),
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.pushNamed(context, DataConstants.webViewScreen);
+                              },
                               provider: generalProvider),
                         ],
                       )

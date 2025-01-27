@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:peaje_app/config/data_constants/data_constants.dart';
+import 'package:peaje_app/presentation/providers/session_provider.dart';
+import 'package:provider/provider.dart';
 import '../../../common/common_index.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -13,10 +15,21 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      final sessionProvider = context.read<SessionProvider>();
+     await sessionProvider.getUserinfo();
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     final textStyle = Theme.of(context).textTheme;
+    final sessionProvider = context.watch<SessionProvider>();
     return WillPopScope(
-      onWillPop: ()async{
+      onWillPop: () async {
         return false;
       },
       child: Scaffold(
@@ -27,14 +40,15 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               SafeArea(
                   child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
                 child: Center(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
-                        'Hola! Pedro Perez',
+                        'Hola! ${sessionProvider.personName} ${sessionProvider.personLastName}',
                         style: textStyle.bodyMedium!
                             .copyWith(fontWeight: FontWeight.bold),
                       ),
@@ -42,7 +56,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         onTap: () {
                           showDialog(
                               context: context,
-                              builder: (context) => Dialogs.customDialog(context,
+                              builder: (context) => Dialogs.customDialog(
+                                      context,
                                       title: 'Cerrar sesión', closeAction: () {
                                     Navigator.pop(context);
                                   }, actionSuccess: () {
@@ -51,7 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       DataConstants.firstLoginScreen,
                                       (route) => false,
                                     );
-      
+
                                     Snackbars.customSnackbar(
                                       context,
                                       title: '¡Vuelva Pronto!',
@@ -128,14 +143,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     label: 'Home',
                   ),
-      
+
                   NavigationDestination(
                     icon: Icon(
                       CupertinoIcons.person,
                       color: checkBoxColor,
                     ),
-                    selectedIcon:
-                        const Icon(CupertinoIcons.person_fill, color: darkColor),
+                    selectedIcon: const Icon(CupertinoIcons.person_fill,
+                        color: darkColor),
                     label: 'Perfil',
                   ),
                 ],

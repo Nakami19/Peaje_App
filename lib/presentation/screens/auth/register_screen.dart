@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:peaje_app/common/common_index.dart';
 import 'package:provider/provider.dart';
@@ -16,6 +18,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final nameController = TextEditingController();
   final lastNameController = TextEditingController();
   final registerForm = GlobalKey<FormState>();
+  final storageService = SecureStorageService();
   @override
   Widget build(BuildContext context) {
     final textStyle = Theme.of(context).textTheme;
@@ -125,8 +128,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     isPrimaryColor: false,
                     isOutline: false,
                     colorFilledButton: const Color(0xFF4F4094),
-                    onTap: () {
+                    onTap: () async {
                       if (registerForm.currentState!.validate()) {
+                      dynamic  data = {
+                            'name': nameController.text,
+                            'lastName': lastNameController.text,
+                            'ci': idController.text
+                          };
+                        storageService.setKeyValue(
+                          'userData',
+                          jsonEncode(data),
+                        );
+
                         Navigator.pushNamed(
                           context,
                           DataConstants.homeScreen,

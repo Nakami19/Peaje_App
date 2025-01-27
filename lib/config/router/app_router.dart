@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:peaje_app/config/router/routes.dart';
 
 import '../../common/common_index.dart';
-import '../../presentation/screens/shared/main_screen.dart';
 
 class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {

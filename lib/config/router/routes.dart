@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:peaje_app/presentation/screens/auth/register_screen.dart';
 import 'package:peaje_app/presentation/screens/payment/payment_screen.dart';
+import 'package:peaje_app/presentation/screens/payment/payment_web_view.dart';
 import 'package:peaje_app/presentation/screens/shared/home_screen.dart';
 
 import '../../presentation/screens/auth/first_login_screen.dart';
@@ -13,6 +14,7 @@ class AppRoutes {
     DataConstants.registerScreen: (_) => const RegisterScreen(),
     DataConstants.paymentScreen: (_) => const PaymentScreen(),
     DataConstants.homeScreen: (_) => const HomeScreen(),
+    DataConstants.webViewScreen: (_) => const PaymentWebView(),
     // DataConstant.profileScreen: (_) =>
     //     const MainScreen(selectedIndex: 2, child: ProfileScreen()),
     // DataConstant.homeScreen: (_) => const MainScreen(selectedIndex: 0, child: HomeScreen()),

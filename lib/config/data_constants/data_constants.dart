@@ -3,4 +3,5 @@ class DataConstants {
   static String registerScreen = '/register';
   static String paymentScreen = '/payment';
   static String homeScreen = '/home';
+  static String webViewScreen = '/webViewScreen';
 }
