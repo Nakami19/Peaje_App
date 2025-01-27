@@ -1,3 +1,9 @@
+## [1.0.0+3] - 2025-1-26 - Natalia. R
+
+## Fix
+
+- Nombre de appbars
+
 ## [1.0.0+2] - 2025-1-26 - Natalia. R
 
 ## Add

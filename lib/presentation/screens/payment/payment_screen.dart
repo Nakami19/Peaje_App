@@ -22,7 +22,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Volver'),
+        title: Text('Inicio'),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(
